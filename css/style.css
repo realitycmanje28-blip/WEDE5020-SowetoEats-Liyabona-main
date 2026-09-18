@@ -1,0 +1,173 @@
+/* ======================================================
+	 POE PART 2 - css/style.css - FINAL VERSION
+	 Student colours i kept: #FFF8F0 / #FF6B35 / #FFA500 / #2E8B57 / #333
+	 ====================================================== */
+
+/* [2.2 - Establish Base Style + CSS Reset] */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--bg: #FFF8F0;
+	--orange: #FF6B35;
+	--light-orange: #FFA500;
+	--green: #2E8B57;
+	--dark: #333;
+}
+/* [2.2 + 2.3 Typography] */
+body {
+	font-family: Arial, sans-serif;
+	background: var(--bg);
+	color: var(--dark);
+	line-height: 1.6;
+	font-size: 16px;
+	font-weight: 400;
+}
+h1, h2, h3 {
+	font-family: Arial, sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; }
+/* [2.4 Layout Structure] - my old code upgraded */
+header {
+	background: var(--orange);
+	color: white;
+	padding: 1rem;
+	text-align: center;
+}
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 0.5rem;
+}
+nav a {
+	color: white;
+	margin: 0 10px;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 5px 10px;
+	transition: 0.3s;
+}
+.hero {
+	background: var(--light-orange);
+	color: white;
+	padding: 3rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px;
+}
+/* [2.5 Visual Styles + Interactivity] */
+.btn {
+	background: var(--green);
+	color: white;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+	display: inline-block;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.btn:hover {
+	background: #1f6b42;
+	transform: translateY(-2px);
+	box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+}
+.btn:focus {
+	outline: 2px solid var(--orange);
+	outline-offset: 2px;
+}
+nav a:hover {
+	color: var(--bg);
+	text-decoration: underline;
+}
+nav a:focus {
+	outline: 2px solid white;
+}
+main {
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 90%;
+}
+footer {
+	background: var(--dark);
+	color: white;
+	text-align: center;
+	padding: 1rem;
+	margin-top: 2rem;
+}
+/* ======================================================
+	 [3.1 + 3.2 Responsive Design - Breakpoints + Relative Units]
+	 ====================================================== */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+	h1 { font-size: 1.8rem; }
+	h2 { font-size: 1.5rem; }
+  
+	.hero {
+		padding: 2rem 1rem;
+		min-height: 200px;
+	}
+  
+	nav {
+		flex-direction: column;
+	}
+  
+	main {
+		padding: 1rem;
+		width: 95%;
+	}
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+	body {
+		font-size: 0.9rem;
+	}
+  
+	header {
+		padding: 0.8rem;
+	}
+  
+	.hero {
+		padding: 1.5rem 1rem;
+	}
+  
+	.btn {
+		width: 100%;
+		text-align: center;
+		padding: 12px;
+	}
+}
+/* Fix Popular Meals layout */
+.popular-meals, .meals, .food-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 20px;
+}
+
+.popular-meals img, .meals img, .food-grid img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
